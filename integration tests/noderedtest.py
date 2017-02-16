@@ -87,11 +87,12 @@ while True:
                 # reader = csv.DictReader(NN)
                 # feilds = [(i['Time'], i['WattHours']) for i in reader]
 		
-	# Or we may just be able to pull the Watt-hours reading directly from the SunSpec inverter
-	# instr = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
-	# total_energy = instr.read_register(40094, 1)
+	#Or we may just be able to pull the Watt-hours reading directly from the datalogger, the datalogger will be able to map which port it will output kWh periodically. 
+	instr = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
+	total_energy = instr.read_register(40094, 1)
                 
-        # Depending how the data is structured we may need to parse / convert the Watt-hours value to a floating point number
+        # Depending how the data is structured we may need to parse / convert the Watt-hours value to a floating point number, yes not sure we need to test that.
+	
         # total_energy = float(?)
 	print("Total Energy MWh: {:.6f}") .format(total_energy)
 
