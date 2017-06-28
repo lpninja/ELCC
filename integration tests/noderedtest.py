@@ -3,7 +3,7 @@
 """noderedtest.py: Queries the solar PV datalogger device on LAN or web, pulls production data and 
 instructs the solarcoin daemon to make a transaction to record onto blockchain"""
 
-__authors__ = "Steven Campbell AKA Scalextrix and "Luke Johnson AKA lpninja"
+__authors__ = "Steven Campbell AKA Scalextrix and Luke Johnson AKA lpninja"
 __copyright__ = "Copyright 2017, Steven Campbell"
 __license__ = "The Unlicense"
 __version__ = "2.1"
