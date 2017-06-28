@@ -3,10 +3,10 @@
 """noderedtest.py: Queries the solar PV datalogger device on LAN or web, pulls production data and 
 instructs the solarcoin daemon to make a transaction to record onto blockchain"""
 
-__author__ = "Steven Campbell AKA Scalextrix"
+__authors__ = "Steven Campbell AKA Scalextrix and "Luke Johnson AKA lpninja"
 __copyright__ = "Copyright 2017, Steven Campbell"
 __license__ = "The Unlicense"
-__version__ = "2.0"
+__version__ = "2.1"
 
 # import python libraries we need for the program to work
 import gc
@@ -47,7 +47,8 @@ else:
         c.execute("INSERT INTO SYSTEMDETAILS VALUES (?,?,?,?,?,?,?,?);", (solarcoin_address, solar_panel, solar_inverter, peak_watt, latitude, longitude, message, rpi,))
         conn.commit()		
         conn.close()
-        
+
+# We need to add KYD data into this format.	
 # Fetch the users details from the database
 conn = sqlite3.connect("API.db")
 c = conn.cursor()
